@@ -1,0 +1,101 @@
+device_id,hour,ad_load,disk_utilization,anomaly_score,anomaly_type,is_injected_anomaly,reason,recommended_action
+4266,23,0.832328733983278,130.89314935933112,-0.021911972675280444,high_du,True,high ad load + peak hour usage + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+3984,18,0.9771683470502623,130.6867338820105,-0.0003701589265346916,high_du,True,high ad load + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+4225,16,0.9730606145712987,128.12242458285195,-0.014766496346647506,high_du,True,high ad load + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+2134,19,0.8702267674270464,127.60907069708185,-0.003717986650878302,high_du,True,high ad load + peak hour usage + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+883,19,0.8613638039014875,127.2545521560595,-0.0004686844844877802,high_du,True,high ad load + peak hour usage + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+3275,16,0.9479717800547842,127.11887120219137,-0.0029587015046735887,high_du,True,high ad load + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+4295,18,0.883703520070732,126.94814080282927,-0.0007725625367621669,high_du,True,high ad load + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+4307,13,0.9876999804330076,125.1079992173203,-0.011755761023817257,high_du,True,high ad load + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+4407,23,0.6323774344810366,122.89509737924146,-0.00027136976045394334,high_du,True,peak hour usage + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+2124,6,0.9977619527941581,117.11047811176633,-0.016153642216753306,high_du,True,high ad load + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+3874,21,0.524858876911572,116.19435507646288,-0.0025582311124279222,high_du,True,peak hour usage + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+4220,22,0.4275120029604318,113.50048011841727,-0.002353595157419841,high_du,True,peak hour usage + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+1135,3,0.9298996499807005,110.79598599922802,-0.02636506865093724,high_du,True,high ad load + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+4221,22,0.3178206280655269,109.11282512262108,-0.005205073490828771,high_du,True,peak hour usage + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+3979,1,0.9088359240704614,107.55343696281845,-0.004896099070297755,high_du,True,high ad load + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+842,23,0.24423404855814423,107.36936194232577,-0.00872030525561207,high_du,True,peak hour usage + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+4899,11,0.6020109603024101,107.2804384120964,-0.016417311985756577,high_du,True,critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+4623,6,0.7485262191212092,107.14104876484836,-0.0006716968965665426,high_du,True,critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+4456,20,0.26362114297694594,104.54484571907784,-0.00015092143164330274,high_du,True,peak hour usage + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+3175,23,0.1184861571625806,102.33944628650322,-0.001019599865725196,high_du,True,peak hour usage + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+835,23,0.07853528044294944,100.74141121771797,-0.0031051616096022805,high_du,True,peak hour usage + critical disk utilization + sudden DU spike pattern,Investigate device storage pressure and consider cleanup or cache purge.
+1861,23,0.9953780176541243,97.41512070616497,-0.005694199992055671,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+1497,23,0.9880226313768419,97.12090525507367,-0.006173100842653656,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+959,23,0.9876405087679863,97.10562035071945,-0.00570031908113211,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+4591,23,0.9820933862211272,96.88373544884507,-0.003441944889296278,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+460,23,0.9732256748088347,96.52902699235338,-0.013921863221416642,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+4046,22,0.9929366717118111,96.11746686847243,-0.004454624807964547,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+2218,22,0.9855393192994307,95.82157277197723,-0.0010088840447272096,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+2356,23,0.9384844388049298,95.13937755219719,-0.0011747197383618069,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+415,22,0.9656697568965166,95.02679027586066,-0.009539700943198337,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+4537,21,0.9846406319643816,94.58562527857526,-0.0022691331110679114,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+3323,21,0.9837223383651236,94.54889353460494,-0.0022691331110679114,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+2358,23,0.9215835588797517,94.46334235519006,-0.011595239951988523,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+3919,21,0.9530432231262337,93.32172892504934,-0.004725335904831485,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+3954,20,0.9739953695868242,92.95981478347296,-0.0013609757219273932,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+2416,22,0.9114223990005675,92.8568959600227,-0.004457103193655776,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+304,23,0.8691295579437958,92.36518231775182,-0.0022609992019370084,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+3375,21,0.907487878727419,91.49951514909677,-0.0005656130819882144,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+1426,23,0.8347854319240385,90.99141727696153,-0.008278418224784034,high_du,False,high ad load + peak hour usage + critical disk utilization,Check ad insertion workload during peak viewing window.
+4115,3,0.06301860769564438,36.120744307825774,-0.004069698865399207,unusual_context,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+2196,0,0.146127875558568,35.84511502234272,-0.0038108375451375576,unusual_context,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+3972,4,0.024140762470689858,35.76563049882759,-0.0005621544017399005,unusual_context,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+2775,3,0.0522641490142326,35.6905659605693,-0.005679180964804242,unusual_context,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+3249,0,0.13891794452301365,35.55671778092054,-0.015669806615391413,unusual_context,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+2437,4,0.018195935709771405,35.52783742839085,-0.005020401684233677,unusual_context,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+4594,0,0.1365042420241911,35.460169680967645,-0.005907251648233247,unusual_context,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+275,0,0.134346194403696,35.37384777614784,-0.0027038200385763878,unusual_context,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+4346,4,0.01111771041206333,35.24470841648253,-0.0003201017543885687,unusual_context,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+3174,0,0.12912367972018846,35.16494718880754,-0.003085355403696033,unusual_context,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+3504,0,0.1274604501728117,35.09841800691247,-0.004314939975683663,unusual_context,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+4310,3,0.03496126729883442,34.99845069195338,-0.0025273542837831453,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+1482,0,0.12393174655301664,34.95726986212067,-0.008263463065474763,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+3340,0,0.11578642527130634,34.63145701085225,-0.006050391456283055,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+1775,3,0.025482936429019,34.61931745716076,-0.0020119382265394448,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+417,1,0.08356415635685066,34.54256625427403,-0.0016148776281547095,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+1213,1,0.07971557936743767,34.38862317469751,-0.0012411185252572121,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+3540,0,0.10869462604075364,34.34778504163015,-0.009140550631536959,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+4049,2,0.047209475688876235,34.288379027555045,-0.0022491093104912707,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+4703,3,0.016762772363767664,34.27051089455071,-0.0001644888528021804,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+2002,1,0.07505583038802022,34.202233215520806,-0.009793556846023788,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+1317,3,0.01405368792008621,34.16214751680345,-0.008466610380006623,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+2322,0,0.10371639533349597,34.148655813339836,-0.02072848608338318,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+4219,3,0.013570088888551601,34.142803555542066,-0.004419425785562314,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+445,2,0.035917881339427304,33.83671525357709,-0.0038421961266236204,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+4350,3,0.005742274054241658,33.829690962169664,-0.01035979535199738,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+228,1,0.06327155149462471,33.73086205978499,-0.010774145558725023,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+3753,0,0.0930202570243659,33.72081028097463,-0.019453616507753235,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+1996,1,0.059650131862750144,33.58600527451001,-0.007701450592010994,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+3357,0,0.0845424775690583,33.38169910276233,-0.007753593852254381,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+2872,2,0.024345536655194677,33.37382146620779,-0.0012468757219062931,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+2482,0,0.084161940687836,33.36647762751344,-0.004884296418870782,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+1443,1,0.05059541802235612,33.22381672089424,-0.010199393099809329,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+3624,1,0.04688582149392739,33.07543285975709,-0.008068209126335546,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+3636,2,0.006722217669021702,32.66888870676087,-0.004041655829904789,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+770,1,0.03337622555493547,32.53504902219742,-0.001254476998424181,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+4190,0,0.058560476245199444,32.34241904980798,-0.012811417991007157,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+1491,1,0.026742485744032596,32.2696994297613,-0.0014104823702972835,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+2145,0,0.0566188838752647,32.264755355010585,-0.021299760875804652,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+2968,0,0.05605364063650864,32.242145625460346,-0.008497077637390382,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+1445,1,0.02565091696900501,32.2260366787602,-0.003385842122889282,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+847,0,0.05471992664705971,32.18879706588239,-0.011795754834255212,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+3383,1,0.024309457211191376,32.17237828844765,-0.015714528610561884,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+2160,1,0.022530444206446676,32.10121776825787,-0.012108964228021768,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+2360,0,0.05190718807549677,32.07628752301987,-0.02370591443278003,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+4226,1,0.014359204043768115,31.774368161750722,-0.023477761591240154,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+3198,1,0.009956330863795326,31.598253234551812,-0.009377674262640356,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+722,0,0.03471328008699792,31.388531203479918,-0.020827271238433198,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+2974,0,0.034073921340017854,31.362956853600714,-0.0198599445066715,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+919,1,0.0010381571721375105,31.2415262868855,-0.012759240057022336,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+1492,0,0.028174274781860187,31.12697099127441,-0.018285370852166305,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+3056,0,0.025721951108426677,31.028878044337066,-0.015907359057431347,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+1143,0,0.02567268630734243,31.0269074522937,-0.01899944633466999,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+411,0,0.023069953489327832,30.922798139573114,-0.004090377585041938,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+2109,0,0.017347819172672363,30.693912766906895,-0.027202614347552556,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+462,0,0.016195162231396942,30.647806489255878,-0.014307492700699087,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+1889,0,0.011568714660440294,30.46274858641761,-0.028309093959433707,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+3030,0,0.006260034023769734,30.25040136095079,-0.029001936943868323,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+3281,0,0.003719425067400639,30.148777002696026,-0.0023790502931640978,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+2417,0,0.0026143570152210582,30.104574280608844,-0.017169274564769355,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
+3201,0,0.0001978078267101946,30.00791231306841,-0.02551189277865218,unusually_low_du,False,unusual feature combination,Review recent device activity and compare against DMA/device-type baseline.
