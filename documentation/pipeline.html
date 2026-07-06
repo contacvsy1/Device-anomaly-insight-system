@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pipeline Walkthrough</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html"><strong>DU Anomaly Insight System</strong><span>Project documentation</span></a>
+        <nav class="nav" aria-label="Documentation">
+          <a href="index.html">Overview</a>
+          <a href="stack.html">Stack</a>
+          <a href="objective.html">Objective</a>
+          <a class="active" href="pipeline.html">Pipeline</a>
+          <a href="execution.html">Execution</a>
+          <a href="data.html">Data</a>
+          <a href="outputs.html">Outputs</a>
+          <a href="roadmap.html">Roadmap</a>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="hero">
+          <p class="eyebrow">Pipeline</p>
+          <h1>From simulated device rows to anomaly insight records</h1>
+          <p class="lead">The script follows a straightforward batch workflow. Each function owns one stage and passes a DataFrame to the next stage.</p>
+        </section>
+
+        <div class="flow">
+          <article class="flow-step">
+            <div class="number">1</div>
+            <div>
+              <h3>Simulate DU data</h3>
+              <p><code>simulate_du_data()</code> creates 5,000 device rows by default. It generates DMA, device type, hour, content type, ad load, and disk utilization.</p>
+              <p>The base formula is <code>30 + hour * 1.2 + ad_load * 40</code>, then selected rows receive an additional spike of 40.</p>
+            </div>
+          </article>
+          <article class="flow-step">
+            <div class="number">2</div>
+            <div>
+              <h3>Engineer features</h3>
+              <p><code>engineer_features()</code> scales disk utilization into <code>du_scaled</code> and one-hot encodes <code>dma</code>, <code>device_type</code>, and <code>content_type</code>.</p>
+              <p>Fields not useful for model fitting, such as <code>device_id</code>, raw <code>disk_utilization</code>, and <code>is_injected_anomaly</code>, are excluded from feature training.</p>
+            </div>
+          </article>
+          <article class="flow-step">
+            <div class="number">3</div>
+            <div>
+              <h3>Detect anomalies</h3>
+              <p><code>detect_anomalies()</code> trains an <code>IsolationForest</code> and writes two model outputs: <code>anomaly</code> and <code>anomaly_score</code>.</p>
+              <p><code>anomaly = -1</code> means the model marked the row as anomalous. <code>anomaly = 1</code> means normal.</p>
+            </div>
+          </article>
+          <article class="flow-step">
+            <div class="number">4</div>
+            <div>
+              <h3>Classify and explain</h3>
+              <p><code>build_insights()</code> keeps only anomalous rows, classifies each anomaly, attaches a reason, and creates a recommended action.</p>
+              <p>The reason layer checks high ad load, peak hour usage, critical disk utilization, and whether the row was an injected spike.</p>
+            </div>
+          </article>
+          <article class="flow-step">
+            <div class="number">5</div>
+            <div>
+              <h3>Save artifacts</h3>
+              <p><code>main()</code> writes raw simulated data to <code>data/du_data.csv</code> and anomaly insights to <code>outputs/du_anomaly_insights.csv</code>.</p>
+            </div>
+          </article>
+        </div>
+
+        <h2>Function Map</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Function</th>
+              <th>Responsibility</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>simulate_du_data</code></td><td>Create synthetic device telemetry and mark injected anomaly rows.</td></tr>
+            <tr><td><code>engineer_features</code></td><td>Prepare scaled and encoded features for the ML model.</td></tr>
+            <tr><td><code>detect_anomalies</code></td><td>Fit Isolation Forest and add anomaly labels and scores.</td></tr>
+            <tr><td><code>explain</code></td><td>Build a readable reason string for each anomaly.</td></tr>
+            <tr><td><code>recommend_action</code></td><td>Choose an operational recommendation based on the row values.</td></tr>
+            <tr><td><code>classify_anomaly</code></td><td>Assign a high-level anomaly type.</td></tr>
+            <tr><td><code>build_insights</code></td><td>Filter, enrich, select, and sort anomaly output columns.</td></tr>
+            <tr><td><code>main</code></td><td>Create folders, run the workflow, print summaries, and write output files.</td></tr>
+          </tbody>
+        </table>
+
+        <p class="footer"><a href="execution.html">Next: Execution</a></p>
+      </main>
+    </div>
+  </body>
+</html>

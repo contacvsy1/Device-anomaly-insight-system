@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Execution Process</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html"><strong>DU Anomaly Insight System</strong><span>Project documentation</span></a>
+        <nav class="nav" aria-label="Documentation">
+          <a href="index.html">Overview</a>
+          <a href="stack.html">Stack</a>
+          <a href="objective.html">Objective</a>
+          <a href="pipeline.html">Pipeline</a>
+          <a class="active" href="execution.html">Execution</a>
+          <a href="data.html">Data</a>
+          <a href="outputs.html">Outputs</a>
+          <a href="roadmap.html">Roadmap</a>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="hero">
+          <p class="eyebrow">Execution</p>
+          <h1>How to run the pipeline locally</h1>
+          <p class="lead">Run the project from the repository root. The script creates required folders if they do not already exist.</p>
+        </section>
+
+        <h2>Setup Commands</h2>
+        <pre><code>python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python src/du_anomaly_insight.py</code></pre>
+
+        <h2>Expected Console Output</h2>
+        <p>When the script runs successfully, it prints:</p>
+        <div class="grid two">
+          <article class="card">
+            <h3>Data summary</h3>
+            <p>Raw data sample, anomaly label counts, disk utilization summary, and anomaly type counts.</p>
+          </article>
+          <article class="card">
+            <h3>Insight preview</h3>
+            <p>Injected spike detection count, top anomaly insight rows, and file paths for saved outputs.</p>
+          </article>
+        </div>
+
+        <h2>Generated Files</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>Created By</th>
+              <th>Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>data/du_data.csv</code></td>
+              <td><code>raw_data.to_csv(...)</code></td>
+              <td>Complete simulated telemetry dataset.</td>
+            </tr>
+            <tr>
+              <td><code>outputs/du_anomaly_insights.csv</code></td>
+              <td><code>insights.to_csv(...)</code></td>
+              <td>Only rows detected as anomalies, enriched with reasoning and action recommendations.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Troubleshooting</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Symptom</th>
+              <th>Likely Cause</th>
+              <th>Fix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Module import error</td>
+              <td>Dependencies were not installed into the active environment.</td>
+              <td>Activate <code>.venv</code> and rerun <code>pip install -r requirements.txt</code>.</td>
+            </tr>
+            <tr>
+              <td>No output files</td>
+              <td>The script did not complete or was run from an unexpected setup.</td>
+              <td>Run <code>python src/du_anomaly_insight.py</code> from the project root and check console errors.</td>
+            </tr>
+            <tr>
+              <td>Different row values</td>
+              <td>Seed, row count, dependencies, or code changed.</td>
+              <td>Confirm <code>seed=42</code> and unchanged simulation defaults.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="footer"><a href="data.html">Next: Data</a></p>
+      </main>
+    </div>
+  </body>
+</html>

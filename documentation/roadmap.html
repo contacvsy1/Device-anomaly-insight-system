@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Roadmap and Upgrade Ideas</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html"><strong>DU Anomaly Insight System</strong><span>Project documentation</span></a>
+        <nav class="nav" aria-label="Documentation">
+          <a href="index.html">Overview</a>
+          <a href="stack.html">Stack</a>
+          <a href="objective.html">Objective</a>
+          <a href="pipeline.html">Pipeline</a>
+          <a href="execution.html">Execution</a>
+          <a href="data.html">Data</a>
+          <a href="outputs.html">Outputs</a>
+          <a class="active" href="roadmap.html">Roadmap</a>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="hero">
+          <p class="eyebrow">Roadmap</p>
+          <h1>How this prototype can grow into a fuller anomaly intelligence system</h1>
+          <p class="lead">The current code proves the core idea. The next improvements can add evaluation, richer baselines, better explanations, and user-facing review tools.</p>
+        </section>
+
+        <h2>Recommended Upgrade Path</h2>
+        <div class="flow">
+          <article class="flow-step">
+            <div class="number">1</div>
+            <div>
+              <h3>Add evaluation metrics</h3>
+              <p>Use <code>is_injected_anomaly</code> to calculate recall, precision, false positives, and false negatives for the simulated spike rows.</p>
+            </div>
+          </article>
+          <article class="flow-step">
+            <div class="number">2</div>
+            <div>
+              <h3>Create group baselines</h3>
+              <p>Compare each row against normal behavior for its DMA, device type, content type, and hour bucket.</p>
+            </div>
+          </article>
+          <article class="flow-step">
+            <div class="number">3</div>
+            <div>
+              <h3>Persist model and metadata</h3>
+              <p>Save fitted preprocessing and model artifacts so detection behavior is reproducible across runs.</p>
+            </div>
+          </article>
+          <article class="flow-step">
+            <div class="number">4</div>
+            <div>
+              <h3>Add an LLM-backed insight layer</h3>
+              <p>Replace or augment rules with a controlled LLM prompt that uses row values, baselines, and historical context.</p>
+            </div>
+          </article>
+          <article class="flow-step">
+            <div class="number">5</div>
+            <div>
+              <h3>Build a dashboard</h3>
+              <p>Show trends, anomaly drilldowns, filters, model scores, and recommended action status in a web UI.</p>
+            </div>
+          </article>
+        </div>
+
+        <h2>Production Considerations</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Area</th>
+              <th>Consideration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Data ingestion</td><td>Move from simulation to scheduled batch input or streaming telemetry.</td></tr>
+            <tr><td>Data quality</td><td>Validate ranges, missing values, duplicate device records, schema changes, and timestamp consistency.</td></tr>
+            <tr><td>Model governance</td><td>Track training data, feature definitions, model version, thresholds, and evaluation reports.</td></tr>
+            <tr><td>Observability</td><td>Log pipeline runs, anomaly volumes, execution time, failed writes, and data drift.</td></tr>
+            <tr><td>Action workflow</td><td>Route critical anomalies into tickets, alerts, Slack messages, or operational dashboards.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          <strong>Suggested next coding task:</strong> add an evaluation report that compares detected anomalies against <code>is_injected_anomaly</code> and saves metrics to <code>outputs/du_model_metrics.csv</code>.
+        </div>
+
+        <p class="footer"><a href="index.html">Back to Overview</a></p>
+      </main>
+    </div>
+  </body>
+</html>

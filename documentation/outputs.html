@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Outputs and Insights</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html"><strong>DU Anomaly Insight System</strong><span>Project documentation</span></a>
+        <nav class="nav" aria-label="Documentation">
+          <a href="index.html">Overview</a>
+          <a href="stack.html">Stack</a>
+          <a href="objective.html">Objective</a>
+          <a href="pipeline.html">Pipeline</a>
+          <a href="execution.html">Execution</a>
+          <a href="data.html">Data</a>
+          <a class="active" href="outputs.html">Outputs</a>
+          <a href="roadmap.html">Roadmap</a>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="hero">
+          <p class="eyebrow">Outputs</p>
+          <h1>Understanding the anomaly insight CSV</h1>
+          <p class="lead">The main review artifact is <code>outputs/du_anomaly_insights.csv</code>, which contains only detected anomalies.</p>
+        </section>
+
+        <h2>Output Columns</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Column</th>
+              <th>Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>device_id</code></td><td>Identifier of the anomalous device row.</td></tr>
+            <tr><td><code>hour</code></td><td>Hour associated with the anomaly.</td></tr>
+            <tr><td><code>ad_load</code></td><td>Advertising load value that may contribute to storage pressure.</td></tr>
+            <tr><td><code>disk_utilization</code></td><td>Raw utilization value used for human interpretation.</td></tr>
+            <tr><td><code>anomaly_score</code></td><td>Isolation Forest score. Lower values are generally more anomalous.</td></tr>
+            <tr><td><code>anomaly_type</code></td><td>High-level category: <code>high_du</code>, <code>unusually_low_du</code>, or <code>unusual_context</code>.</td></tr>
+            <tr><td><code>is_injected_anomaly</code></td><td>Whether this row was one of the simulator's injected spike rows.</td></tr>
+            <tr><td><code>reason</code></td><td>Readable explanation built from rule checks.</td></tr>
+            <tr><td><code>recommended_action</code></td><td>Suggested next step for operations or analysis.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Anomaly Types</h2>
+        <div class="grid three">
+          <article class="card">
+            <h3><span class="status-danger">high_du</span></h3>
+            <p>Assigned when <code>disk_utilization &gt;= 90</code>. These are the most urgent rows because storage pressure is already high.</p>
+          </article>
+          <article class="card">
+            <h3><span class="status-warn">unusually_low_du</span></h3>
+            <p>Assigned when <code>disk_utilization &lt;= 35</code>. This can represent an unusual under-utilization context.</p>
+          </article>
+          <article class="card">
+            <h3><span class="status-good">unusual_context</span></h3>
+            <p>Assigned when the model sees an unusual feature combination that is not simply high or low utilization.</p>
+          </article>
+        </div>
+
+        <h2>Reasoning Rules</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Rule</th>
+              <th>Reason Text</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>ad_load &gt; 0.8</code></td><td>high ad load</td></tr>
+            <tr><td><code>hour &gt; 18</code></td><td>peak hour usage</td></tr>
+            <tr><td><code>disk_utilization &gt; 90</code></td><td>critical disk utilization</td></tr>
+            <tr><td><code>is_injected_anomaly = True</code></td><td>sudden DU spike pattern</td></tr>
+            <tr><td>No rule matched</td><td>unusual feature combination</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Recommended Actions</h2>
+        <p>
+          The action text prioritizes severe storage pressure first. If utilization is above 100, the output recommends investigating storage pressure and cleanup or cache purge.
+          Peak-hour and high-ad-load cases guide the user toward workload checks and trend monitoring.
+        </p>
+
+        <p class="footer"><a href="roadmap.html">Next: Roadmap</a></p>
+      </main>
+    </div>
+  </body>
+</html>

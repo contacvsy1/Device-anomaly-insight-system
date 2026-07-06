@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Guide</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html"><strong>DU Anomaly Insight System</strong><span>Project documentation</span></a>
+        <nav class="nav" aria-label="Documentation">
+          <a href="index.html">Overview</a>
+          <a href="stack.html">Stack</a>
+          <a href="objective.html">Objective</a>
+          <a href="pipeline.html">Pipeline</a>
+          <a href="execution.html">Execution</a>
+          <a class="active" href="data.html">Data</a>
+          <a href="outputs.html">Outputs</a>
+          <a href="roadmap.html">Roadmap</a>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="hero">
+          <p class="eyebrow">Data</p>
+          <h1>Input dataset structure and feature meaning</h1>
+          <p class="lead">The current data is simulated inside the Python script and saved as <code>data/du_data.csv</code>.</p>
+        </section>
+
+        <h2>Raw Columns</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Column</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>device_id</code></td><td>Integer</td><td>Unique row-level device identifier from 0 to the generated row count minus one.</td></tr>
+            <tr><td><code>dma</code></td><td>Category</td><td>Designated market area. Current simulated values are NY, LA, TX, and FL.</td></tr>
+            <tr><td><code>device_type</code></td><td>Category</td><td>Device class. Current simulated values are A, B, and C.</td></tr>
+            <tr><td><code>hour</code></td><td>Integer</td><td>Hour of day from 0 through 23.</td></tr>
+            <tr><td><code>content_type</code></td><td>Category</td><td>Content context. Current simulated values are sports, news, and movie.</td></tr>
+            <tr><td><code>ad_load</code></td><td>Float</td><td>Advertising load from 0 to 1.</td></tr>
+            <tr><td><code>disk_utilization</code></td><td>Float</td><td>Generated DU value based on hour, ad load, and optional injected spike.</td></tr>
+            <tr><td><code>is_injected_anomaly</code></td><td>Boolean</td><td>Label showing whether the simulator deliberately added a utilization spike.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Feature Engineering</h2>
+        <div class="grid two">
+          <article class="card">
+            <h3>Scaled numerical feature</h3>
+            <p><code>StandardScaler</code> converts <code>disk_utilization</code> into <code>du_scaled</code>, giving the model a normalized version of utilization.</p>
+          </article>
+          <article class="card">
+            <h3>One-hot categorical features</h3>
+            <p><code>pandas.get_dummies</code> expands <code>dma</code>, <code>device_type</code>, and <code>content_type</code> into numeric indicator columns.</p>
+          </article>
+        </div>
+
+        <h2>Training Feature Exclusions</h2>
+        <p>The feature matrix excludes <code>device_id</code>, raw <code>disk_utilization</code>, and <code>is_injected_anomaly</code>. This keeps identifiers and ground-truth simulation labels out of the model input.</p>
+
+        <h2>Current Defaults</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Setting</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Generated rows</td><td><code>5000</code></td></tr>
+            <tr><td>Injected anomalies</td><td><code>100</code></td></tr>
+            <tr><td>Random seed</td><td><code>42</code></td></tr>
+            <tr><td>Model contamination</td><td><code>0.02</code></td></tr>
+          </tbody>
+        </table>
+
+        <p class="footer"><a href="outputs.html">Next: Outputs</a></p>
+      </main>
+    </div>
+  </body>
+</html>

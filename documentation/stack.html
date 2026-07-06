@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Technology Stack</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html"><strong>DU Anomaly Insight System</strong><span>Project documentation</span></a>
+        <nav class="nav" aria-label="Documentation">
+          <a href="index.html">Overview</a>
+          <a class="active" href="stack.html">Stack</a>
+          <a href="objective.html">Objective</a>
+          <a href="pipeline.html">Pipeline</a>
+          <a href="execution.html">Execution</a>
+          <a href="data.html">Data</a>
+          <a href="outputs.html">Outputs</a>
+          <a href="roadmap.html">Roadmap</a>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="hero">
+          <p class="eyebrow">Stack</p>
+          <h1>Technology used by the project</h1>
+          <p class="lead">The current implementation is a local Python machine learning pipeline with CSV artifacts and static documentation.</p>
+        </section>
+
+        <h2>Core Runtime</h2>
+        <div class="grid two">
+          <article class="card">
+            <h3>Python</h3>
+            <p>Runs the full workflow in <code>src/du_anomaly_insight.py</code>. The script is organized into small functions for simulation, feature engineering, detection, explanation, and export.</p>
+          </article>
+          <article class="card">
+            <h3>CSV Files</h3>
+            <p>The project uses simple file-based inputs and outputs, making the workflow easy to inspect without a database or service dependency.</p>
+          </article>
+        </div>
+
+        <h2>Data and ML Libraries</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Library</th>
+              <th>Role</th>
+              <th>Used For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>pandas</code></td>
+              <td>Data manipulation</td>
+              <td>Builds DataFrames, creates encoded columns, filters anomalies, sorts insights, writes CSV files.</td>
+            </tr>
+            <tr>
+              <td><code>numpy</code></td>
+              <td>Numerical simulation</td>
+              <td>Creates random device values, hours, ad load, content types, and injected anomaly indexes.</td>
+            </tr>
+            <tr>
+              <td><code>scikit-learn</code></td>
+              <td>Machine learning</td>
+              <td>Uses <code>StandardScaler</code> for scaling disk utilization and <code>IsolationForest</code> for anomaly detection.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Modeling Approach</h2>
+        <div class="card">
+          <h3>Isolation Forest</h3>
+          <p>
+            Isolation Forest is an unsupervised anomaly detection algorithm. It marks points as anomalous when they are easier to isolate from normal observations.
+            In this project, <code>contamination=0.02</code> tells the model to expect about 2 percent of rows to be anomalous.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Unsupervised ML</span>
+            <span class="pill">Numerical + categorical features</span>
+            <span class="pill">Anomaly score output</span>
+            <span class="pill">Deterministic seed</span>
+          </div>
+        </div>
+
+        <h2>Documentation Layer</h2>
+        <p>This folder is static HTML and CSS. It can be opened directly from the filesystem and does not need a server, build step, or JavaScript framework.</p>
+
+        <p class="footer"><a href="objective.html">Next: Objective</a></p>
+      </main>
+    </div>
+  </body>
+</html>

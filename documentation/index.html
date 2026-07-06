@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Device Anomaly Insight System Documentation</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <strong>DU Anomaly Insight System</strong>
+          <span>Project documentation</span>
+        </a>
+        <nav class="nav" aria-label="Documentation">
+          <a class="active" href="index.html">Overview</a>
+          <a href="stack.html">Stack</a>
+          <a href="objective.html">Objective</a>
+          <a href="pipeline.html">Pipeline</a>
+          <a href="execution.html">Execution</a>
+          <a href="data.html">Data</a>
+          <a href="outputs.html">Outputs</a>
+          <a href="roadmap.html">Roadmap</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section class="hero">
+          <p class="eyebrow">Parent index</p>
+          <h1>Easy guide to the Device Utilization anomaly and insight project</h1>
+          <p class="lead">
+            This documentation explains the project purpose, technology stack, execution process,
+            data flow, model behavior, generated insights, and practical next steps.
+          </p>
+        </section>
+
+        <section class="grid three">
+          <article class="card">
+            <span class="metric">1</span>
+            <h3>Generate telemetry</h3>
+            <p>The Python script simulates device utilization data with device, market, content, hour, ad load, and disk utilization fields.</p>
+          </article>
+          <article class="card">
+            <span class="metric">2</span>
+            <h3>Detect anomalies</h3>
+            <p>Feature engineering prepares numerical and categorical fields, then Isolation Forest identifies unusual utilization patterns.</p>
+          </article>
+          <article class="card">
+            <span class="metric">3</span>
+            <h3>Explain actions</h3>
+            <p>A lightweight reasoning layer adds anomaly type, reason, and recommended action so the CSV output is directly reviewable.</p>
+          </article>
+        </section>
+
+        <h2>Quick Navigation</h2>
+        <div class="grid two">
+          <a class="card" href="stack.html">
+            <h3>Technology Stack</h3>
+            <p>Python, pandas, NumPy, scikit-learn, CSV storage, and static HTML documentation.</p>
+          </a>
+          <a class="card" href="objective.html">
+            <h3>Objective and Scope</h3>
+            <p>What business and technical problem this project solves.</p>
+          </a>
+          <a class="card" href="pipeline.html">
+            <h3>Pipeline Walkthrough</h3>
+            <p>Step-by-step explanation from simulation to anomaly recommendations.</p>
+          </a>
+          <a class="card" href="execution.html">
+            <h3>Run Process</h3>
+            <p>Commands for environment setup, dependency installation, and local execution.</p>
+          </a>
+        </div>
+
+        <h2>Repository Map</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Path</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>src/du_anomaly_insight.py</code></td>
+              <td>Main executable pipeline for data simulation, model training, anomaly detection, reasoning, and CSV export.</td>
+            </tr>
+            <tr>
+              <td><code>data/du_data.csv</code></td>
+              <td>Generated raw DU telemetry dataset.</td>
+            </tr>
+            <tr>
+              <td><code>outputs/du_anomaly_insights.csv</code></td>
+              <td>Generated anomaly-only dataset with scores, types, reasons, and recommended actions.</td>
+            </tr>
+            <tr>
+              <td><code>requirements.txt</code></td>
+              <td>Python dependencies required by the pipeline.</td>
+            </tr>
+            <tr>
+              <td><code>documentation/</code></td>
+              <td>This clickable HTML documentation site.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          <strong>Start here:</strong> open <code>documentation/index.html</code> in a browser, then use the left navigation to move through each topic.
+        </div>
+
+        <p class="footer">Documentation generated for the current repository structure and script behavior.</p>
+      </main>
+    </div>
+  </body>
+</html>

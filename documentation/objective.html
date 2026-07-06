@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Objective and Scope</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html"><strong>DU Anomaly Insight System</strong><span>Project documentation</span></a>
+        <nav class="nav" aria-label="Documentation">
+          <a href="index.html">Overview</a>
+          <a href="stack.html">Stack</a>
+          <a class="active" href="objective.html">Objective</a>
+          <a href="pipeline.html">Pipeline</a>
+          <a href="execution.html">Execution</a>
+          <a href="data.html">Data</a>
+          <a href="outputs.html">Outputs</a>
+          <a href="roadmap.html">Roadmap</a>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="hero">
+          <p class="eyebrow">Objective</p>
+          <h1>Detect abnormal disk utilization and convert it into clear operational insight</h1>
+          <p class="lead">The project demonstrates a compact anomaly detection system for streaming or device telemetry, focused on disk utilization behavior.</p>
+        </section>
+
+        <h2>Primary Goals</h2>
+        <div class="grid three">
+          <article class="card">
+            <h3>Find unusual DU behavior</h3>
+            <p>Identify rows where disk utilization is unusual compared with hour, ad load, DMA, device type, and content context.</p>
+          </article>
+          <article class="card">
+            <h3>Explain why it matters</h3>
+            <p>Add readable explanations such as high ad load, peak hour usage, critical utilization, or injected spike pattern.</p>
+          </article>
+          <article class="card">
+            <h3>Recommend next action</h3>
+            <p>Turn anomaly rows into actionable operations guidance for investigation, cleanup, cache purge, or trend monitoring.</p>
+          </article>
+        </div>
+
+        <h2>Business Interpretation</h2>
+        <p>
+          Disk utilization anomalies can indicate device storage pressure, workload spikes, content delivery stress, or abnormal behavior during peak viewing windows.
+          The output helps an operations or analytics team prioritize which devices or usage contexts deserve attention.
+        </p>
+
+        <h2>Current Scope</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Included</th>
+              <th>Not Included Yet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Simulated data generation with injected spike labels.</td>
+              <td>Production ingestion from real devices or streaming systems.</td>
+            </tr>
+            <tr>
+              <td>Local unsupervised anomaly detection.</td>
+              <td>Model registry, scheduled retraining, or online inference service.</td>
+            </tr>
+            <tr>
+              <td>Rule-based explanation and action layer.</td>
+              <td>LLM-backed explanation, embedding search, or root-cause graph.</td>
+            </tr>
+            <tr>
+              <td>CSV output for review and downstream use.</td>
+              <td>Dashboard, alert routing, ticket creation, or database persistence.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          <strong>Design intent:</strong> this project is best understood as a prototype-quality ML and insight pipeline that can later grow into a service or dashboard.
+        </div>
+
+        <p class="footer"><a href="pipeline.html">Next: Pipeline</a></p>
+      </main>
+    </div>
+  </body>
+</html>
